@@ -1,0 +1,48 @@
+name: Build README
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: 'main'
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout main
+      run: git checkout main
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Cache pip
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          ${{ runner.os }}-        
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip      
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Update README
+      run: |-
+        python3 build-readme.py
+    - name: Commit and push if changed
+      if: success()    
+      run: |-
+        git diff
+        git config --local user.email "janpreetsinghgill@gmail.com"
+        git config --local user.name "Janpreet Singh via GitHub Action"
+        git add README.md
+        git commit -m "🤖 README-building bot is helping" || exit 0
+    - name: Push to main
+      if: success()
+      run: git push                 
