@@ -1,2 +1,3 @@
 requests
 feedparser
+write2list
