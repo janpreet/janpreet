@@ -3,6 +3,7 @@ import requests
 import feedparser
 import os
 from collections import Counter
+import write2list
 
 # Language Composition
 
@@ -39,16 +40,12 @@ for e in f['entries']:
 
 print('Processing Readme Data...')
 
-readmeContent=[]
-readmeContent.insert(0, "![Build README](https://github.com/janpreet/janpreet/workflows/Build%20README/badge.svg) <br />")
-readmeContent.insert(1, "### Hi there 👋  <br />")
-readmeContent.insert(2, "Thank you for visiting my GitHub. Reach out to me at [singh@janpreet.com](mailto:singh@janpreet.com), read my [blog](https://janpreet.com) or follow [@SinghJanpreet](https://twitter.com/singhjanpreet) on Twitter. <br />")
-readmeContent.insert(3, "<table style='float:right' markdown='1'><tr><th>Language Composition</th><th>Blog</th></tr><tr><td style='vertical-align:top'>")
-readmeContent.extend(langComposition)
-readmeContent.insert(len(readmeContent),"</td><td style='vertical-align:top'>")
-readmeContent.extend(postList)
-readmeContent.insert(len(readmeContent),"</td></tr></table>")
-readmeContent.insert(len(readmeContent), "<small><i>NOTE: Language composition is a list of most used languages in my repositories. It is not a direct indication of my skill level.</i></small>")
+fixedContent="![Build README](https://github.com/janpreet/janpreet/workflows/Build%20README/badge.svg) <br />" \
+            "<h3>Hi there 👋 </h3> <br />" \
+            "Thank you for visiting my GitHub. Reach out to me at [singh@janpreet.com](mailto:singh@janpreet.com), read my [blog](https://janpreet.com) or follow [@SinghJanpreet](https://twitter.com/singhjanpreet) on Twitter. <br />" \
+            "<table style='float:right' markdown='1'><tr><th>Language Composition</th><th>Blog</th></tr><tr><td style='vertical-align:top'> " 
+
+readmeContent=write2list.create(fixedContent, langComposition, postList)
 
 # Create Readme.md
 
@@ -61,7 +58,7 @@ if not os.path.exists(readmeFile):
 
 with open(readmeFile, mode='wt', encoding='utf-8') as f:
     try:
-        f.write('\n'.join(readmeContent))  
+        f.write('\n'.join(str(v) for v in readmeContent))  
     finally:
         f.close()    
 
