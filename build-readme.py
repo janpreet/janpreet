@@ -22,7 +22,7 @@ for obj in userData:
 langCount=Counter(allLanguages)
 
 langComposition=[]
-for key, size in sorted(langCount.items()):
+for key, size in sorted(langCount.items(), key=lambda x: x[1], reverse=True):
     langComposition.append('{}: {:0.2f}'.format('- '+key, ((size/len(allLanguages))*100))+'% <br />')
 
 # Blog Feed
@@ -40,12 +40,21 @@ for e in f['entries']:
 
 print('Processing Readme Data...')
 
-fixedContent="![Build README](https://github.com/janpreet/janpreet/workflows/Build%20README/badge.svg) <br />" \
+fixedContent=["![Build README](https://github.com/janpreet/janpreet/workflows/Build%20README/badge.svg) <br />" \
             "<h3>Hi there 👋 </h3> <br />" \
-            "Thank you for visiting my GitHub. Reach out to me at [singh@janpreet.com](mailto:singh@janpreet.com), read my [blog](https://janpreet.com) or follow [@SinghJanpreet](https://twitter.com/singhjanpreet) on Twitter. <br />" \
-            "<table style='float:right' markdown='1'><tr><th>Language Composition</th><th>Blog</th></tr><tr><td style='vertical-align:top'> " 
+            "Thank you for visiting my GitHub. Reach out to me at [singh@janpreet.com](mailto:singh@janpreet.com), " \
+            "read my [blog](https://janpreet.com) or follow [@SinghJanpreet](https://twitter.com/singhjanpreet) on Twitter. <br />" \
+            "<table style='float:right' markdown='1'><tr><th>Language Composition</th><th>Blog</th></tr><tr><td style='vertical-align:top'> "]
 
-readmeContent=write2list.create(fixedContent, langComposition, postList)
+separator=["</td><td style='vertical-align:top'>"]
+
+endNote=["</td></tr></table>" \
+            "<small><i>NOTE: Language composition is a list of most used languages in my repositories." \
+            "It is not a direct indication of my skill level.</i></small>"]
+
+readmeTuple=(fixedContent, langComposition, separator, postList, endNote)
+
+readmeContent=write2list.create(readmeTuple)
 
 # Create Readme.md
 
