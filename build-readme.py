@@ -44,9 +44,9 @@ fixedContent=["![Build README](https://github.com/janpreet/janpreet/workflows/Bu
             "<h3>Hi there 👋 </h3> <br />" \
             "Thank you for visiting my GitHub. Reach out to me at [singh@janpreet.com](mailto:singh@janpreet.com), " \
             "read my [blog](https://janpreet.com) or follow [@SinghJanpreet](https://twitter.com/singhjanpreet) on Twitter. <br />" \
-            "<table style='float:right' markdown='1'><tr><th>Language Composition</th><th>Blog</th></tr><tr><td style='vertical-align:top'> "]
+            "<table style='float:right' markdown='1'><tr><th>Language Composition</th><th>Blog</th></tr><tr><td style='vertical-align:top' markdown='1'> "]
 
-separator=["</td><td style='vertical-align:top'>"]
+separator=["</td><td style='vertical-align:top' markdown='1'>"]
 
 endNote=["</td></tr></table>" \
             "<small><i>NOTE: Language composition is a list of most used languages in my repositories." \
