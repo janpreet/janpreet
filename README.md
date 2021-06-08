@@ -6,4 +6,5 @@
 - TeX: 6.25% <br />
 - SCSS: 6.25% <br />
 </td><td style='vertical-align:top' markdown='1'>
+- <a href="https://janpreet.com/tech/2020/12/08/terraform-gcp-k8s.html" target="_blank">Terraform-GCP-K8s: A Jenkins DevOps story</a><br />
 </td></tr></table><small><i>NOTE: Language composition is a list of most used languages in my repositories.It is not a direct indication of my skill level.</i></small>
