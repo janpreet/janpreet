@@ -2,9 +2,10 @@
 - Dockerfile: 35.29% <br />
 - Python: 17.65% <br />
 - HCL: 17.65% <br />
-- HTML: 11.76% <br />
 - C++: 5.88% <br />
 - TeX: 5.88% <br />
+- HTML: 5.88% <br />
+- Jinja: 5.88% <br />
 - SCSS: 5.88% <br />
 </td><td style='vertical-align:top' markdown='1'>
 - <a href="https://janpreet.com/tech/2020/12/08/terraform-gcp-k8s.html" target="_blank">Terraform-GCP-K8s: A Jenkins DevOps story</a><br />
