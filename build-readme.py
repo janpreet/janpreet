@@ -15,7 +15,7 @@ userData = json.loads(response.text)
 allLanguages=[]
 
 for obj in userData:
-    if 'language' in obj or len(obj['language']) != 0:
+    if 'language' in obj:
         if obj["language"] != None:
             allLanguages.extend([obj["language"]])
 
