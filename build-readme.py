@@ -40,7 +40,7 @@ for e in f['entries']:
 
 print('Processing Readme Data...')
 
-fixedContent=["![Build README](https://github.com/janpreet/janpreet/workflows/Build%20README/badge.svg) <br />" \
+fixedContent=["![Build Profile](https://github.com/janpreet/janpreet/workflows/Build%20README/badge.svg) <br />" \
             "<h3>Hi there 👋 </h3> <br />" \
             "Thank you for visiting my GitHub. Reach out to me at [singh@janpreet.com](mailto:singh@janpreet.com), " \
             "read my [blog](https://janpreet.com) or follow [@SinghJanpreet](https://twitter.com/singhjanpreet) on Twitter. <br />" \
