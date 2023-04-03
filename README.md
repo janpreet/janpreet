@@ -9,6 +9,7 @@
 - Jinja: 5.26% <br />
 - SCSS: 5.26% <br />
 </td><td style='vertical-align:top' markdown='1'>
+- <a href="https://janpreet.com/media-sheet" target="_blank">Media Sheet</a><br />
 - <a href="https://janpreet.com/nanakshahi-calendar" target="_blank">Nanakshahi Calendar</a><br />
 - <a href="https://janpreet.com/terraform-gcp-k8s" target="_blank">Terraform-GCP-K8s: A Jenkins DevOps story</a><br />
 </td></tr></table><small><i>NOTE: Language composition is a list of most used languages in my repositories.It is not a direct indication of my skill level.</i></small>
