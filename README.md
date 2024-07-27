@@ -6,9 +6,9 @@
 - C++: 5.00% <br />
 - TeX: 5.00% <br />
 - HTML: 5.00% <br />
+- Go: 5.00% <br />
 - Open Policy Agent: 5.00% <br />
 - Jinja: 5.00% <br />
-- SCSS: 5.00% <br />
 </td><td style='vertical-align:top' markdown='1'>
 - <a href="https://janpreet.com/media-sheet" target="_blank">Media Sheet</a><br />
 - <a href="https://janpreet.com/nanakshahi-calendar" target="_blank">Nanakshahi Calendar</a><br />
