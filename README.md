@@ -12,7 +12,6 @@
 - Jinja: 5.00% <br />
 - Rust: 5.00% <br />
 </td><td style='vertical-align:top' markdown='1'>
-- <a href="https://janpreet.com/kado-proxy" target="_blank">Kado Proxy</a><br />
 - <a href="https://janpreet.com/rust-badge-generator" target="_blank">From Kado to Rust: The Late-Night Coding Saga Continues</a><br />
 - <a href="https://janpreet.com/kado-story" target="_blank">Kado: Weaving Infrastructure Management into Late-Night Code</a><br />
 - <a href="https://janpreet.com/media-sheet" target="_blank">Media Sheet</a><br />
