@@ -13,6 +13,7 @@
 - Rust: 5.00% <br />
 </td><td style='vertical-align:top' markdown='1'>
 - <a href="https://janpreet.com/rust-badge-generator" target="_blank">From Kado to Rust: The Late-Night Coding Saga Continues</a><br />
+- <a href="https://janpreet.com/home-network" target="_blank">Home Network Journey</a><br />
 - <a href="https://janpreet.com/kado-story" target="_blank">Kado: Weaving Infrastructure Management into Late-Night Code</a><br />
 - <a href="https://janpreet.com/media-sheet" target="_blank">Media Sheet</a><br />
 - <a href="https://janpreet.com/nanakshahi-calendar" target="_blank">Nanakshahi Calendar</a><br />
