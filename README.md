@@ -1,7 +1,7 @@
 ![Build Profile](https://github.com/janpreet/janpreet/workflows/Build%20README/badge.svg) <br /><h3>Hi there 👋 </h3> <br />Thank you for visiting my GitHub. You may reach out to me at [singh@janpreet.com](mailto:singh@janpreet.com), or read my [blog](https://janpreet.com). <br /><table style='float:right' markdown='1'><tr><th>Language Composition</th><th>Blog</th></tr><tr><td style='vertical-align:top' markdown='1'> 
 - Dockerfile: 28.57% <br />
-- JavaScript: 14.29% <br />
 - Go: 14.29% <br />
+- JavaScript: 14.29% <br />
 - HCL: 9.52% <br />
 - C++: 4.76% <br />
 - TeX: 4.76% <br />
