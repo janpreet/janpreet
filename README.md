@@ -1,15 +1,14 @@
 ![Build Profile](https://github.com/janpreet/janpreet/workflows/Build%20README/badge.svg) <br /><h3>Hi there 👋 </h3> <br />Thank you for visiting my GitHub. You may reach out to me at [singh@janpreet.com](mailto:singh@janpreet.com), or read my [blog](https://janpreet.com). <br /><table style='float:right' markdown='1'><tr><th>Language Composition</th><th>Blog</th></tr><tr><td style='vertical-align:top' markdown='1'> 
-- Dockerfile: 28.57% <br />
-- Go: 14.29% <br />
-- JavaScript: 14.29% <br />
-- HCL: 9.52% <br />
-- C++: 4.76% <br />
-- TeX: 4.76% <br />
-- HTML: 4.76% <br />
-- Python: 4.76% <br />
-- TypeScript: 4.76% <br />
-- Open Policy Agent: 4.76% <br />
-- Jinja: 4.76% <br />
+- Dockerfile: 30.00% <br />
+- Go: 15.00% <br />
+- JavaScript: 15.00% <br />
+- HCL: 10.00% <br />
+- C++: 5.00% <br />
+- TeX: 5.00% <br />
+- HTML: 5.00% <br />
+- Python: 5.00% <br />
+- TypeScript: 5.00% <br />
+- Open Policy Agent: 5.00% <br />
 </td><td style='vertical-align:top' markdown='1'>
 - <a href="https://janpreet.com/home-network" target="_blank">Home Network Journey</a><br />
 - <a href="https://janpreet.com/rust-badge-generator" target="_blank">From Kado to Rust: The Late-Night Coding Saga Continues</a><br />
