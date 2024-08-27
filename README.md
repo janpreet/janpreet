@@ -5,34 +5,15 @@ I'm passionate about coding and always learning new technologies. Feel free to e
 
 ## Language Composition
 ```mermaid
-pie title Language Composition
+```mermaid
+bar title Language Composition
     "Go" : 90.6
     "Starlark" : 5.8
     "Shell" : 2.7
     "PowerShell" : 0.2
     "Makefile" : 0.2
-    "Dockerfile" : 0.1
-    "HCL" : 0.1
-    "Python" : 0.1
-    "JavaScript" : 0.1
-    "TypeScript" : 0.0
-    "HTML" : 0.0
-    "CSS" : 0.0
-    "Lua" : 0.0
-    "SCSS" : 0.0
-    "Smarty" : 0.0
-    "Jinja" : 0.0
-    "Rust" : 0.0
-    "Open Policy Agent" : 0.0
-    "TeX" : 0.0
-    "Mustache" : 0.0
-    "C" : 0.0
-    "Ruby" : 0.0
-    "FLUX" : 0.0
-    "C++" : 0.0
-    "Vue" : 0.0
-    "sed" : 0.0
-
+    "Other" : 0.5
+```
 ```
 
 ## Recent Blog Posts
@@ -46,5 +27,5 @@ pie title Language Composition
 - Email: [kado@janpreet.com](mailto:kado@janpreet.com)
 - Blog: [https://janpreet.com](https://janpreet.com)
 
-<small><i>Last updated: 2024-08-27 12:17:28 UTC</i></small>
+<small><i>Last updated: 2024-08-27 12:24:00 UTC</i></small>
 <small><i>NOTE: Language composition is a list of most used languages in my repositories. It is not a direct indication of my skill level.</i></small>
