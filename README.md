@@ -5,7 +5,6 @@ I'm passionate about coding and always learning new technologies. Feel free to e
 
 ## Language Composition
 ```mermaid
-```mermaid
 bar title Language Composition
     "Go" : 90.6
     "Starlark" : 5.8
@@ -13,7 +12,6 @@ bar title Language Composition
     "PowerShell" : 0.2
     "Makefile" : 0.2
     "Other" : 0.5
-```
 ```
 
 ## Recent Blog Posts
@@ -27,5 +25,5 @@ bar title Language Composition
 - Email: [kado@janpreet.com](mailto:kado@janpreet.com)
 - Blog: [https://janpreet.com](https://janpreet.com)
 
-<small><i>Last updated: 2024-08-27 12:24:00 UTC</i></small>
+<small><i>Last updated: 2024-08-27 12:26:02 UTC</i></small>
 <small><i>NOTE: Language composition is a list of most used languages in my repositories. It is not a direct indication of my skill level.</i></small>
