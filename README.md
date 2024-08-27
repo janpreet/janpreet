@@ -4,15 +4,18 @@
 I'm passionate about coding and always learning new technologies. Feel free to explore my repositories and don't hesitate to reach out if you have any questions or collaboration ideas!
 
 ## Language Composition
-```mermaid
-bar title Language Composition
-    "Go" : 90.6
-    "Starlark" : 5.8
-    "Shell" : 2.7
-    "PowerShell" : 0.2
-    "Makefile" : 0.2
-    "Other" : 0.5
-```
+| Language | Percentage |
+|----------|------------|
+| Go | 90.6% |
+| Starlark | 5.8% |
+| Shell | 2.7% |
+| Makefile | 0.2% |
+| PowerShell | 0.2% |
+| Dockerfile | 0.1% |
+| HCL | 0.1% |
+| JavaScript | 0.1% |
+| Python | 0.1% |
+
 
 ## Recent Blog Posts
 - [Home Network Journey](https://janpreet.com/home-network)
@@ -25,5 +28,5 @@ bar title Language Composition
 - Email: [kado@janpreet.com](mailto:kado@janpreet.com)
 - Blog: [https://janpreet.com](https://janpreet.com)
 
-<small><i>Last updated: 2024-08-27 12:26:02 UTC</i></small>
+<small><i>Last updated: 2024-08-27 12:32:48 UTC</i></small>
 <small><i>NOTE: Language composition is a list of most used languages in my repositories. It is not a direct indication of my skill level.</i></small>
