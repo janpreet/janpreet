@@ -29,14 +29,16 @@ def get_language_data(username, repos, token=None):
 
 def get_language_composition(language_data):
     total = sum(language_data.values())
-    composition = {lang: round(count / total * 100, 1) for lang, count in language_data.items()}
-    return dict(sorted(composition.items(), key=lambda x: (-x[1], x[0])))
+    composition = {lang: count / total for lang, count in language_data.items()}
+    return dict(sorted(composition.items(), key=lambda x: -x[1]))
 
-def create_language_table(lang_composition):
-    table = "| Language | Percentage |\n|----------|------------|\n"
+def create_language_cloud(lang_composition):
+    cloud = []
+    max_percentage = max(lang_composition.values())
     for lang, percentage in lang_composition.items():
-        table += f"| {lang} | {percentage}% |\n"
-    return table
+        size = int((percentage / max_percentage) * 5) + 1
+        cloud.append(f"{'#' * size} {lang}")
+    return ' '.join(cloud)
 
 def get_blog_posts(blog_url, max_posts=5):
     feed = feedparser.parse(blog_url)
@@ -61,8 +63,8 @@ def main():
     language_data = get_language_data(username, repos, github_token)
     lang_composition = get_language_composition(language_data)
     
-    print('Creating language table...')
-    language_table = create_language_table(lang_composition)
+    print('Creating language cloud...')
+    language_cloud = create_language_cloud(lang_composition)
     
     print('Fetching blog posts...')
     blog_posts = get_blog_posts(blog_url)
@@ -72,7 +74,7 @@ def main():
     readme_content = generate_readme_content(
         template_path,
         username=username,
-        language_table=language_table,
+        language_cloud=language_cloud,
         blog_posts='\n'.join([f"- [{post['title']}]({post['link']})" for post in blog_posts]),
         current_time=current_time
     )
