@@ -36,8 +36,14 @@ def create_language_cloud(lang_composition):
     cloud = []
     max_percentage = max(lang_composition.values())
     for lang, percentage in lang_composition.items():
-        size = int((percentage / max_percentage) * 5) + 1
-        cloud.append(f"{'#' * size} {lang}")
+        if percentage / max_percentage > 0.5:
+            cloud.append(f"### {lang}")
+        elif percentage / max_percentage > 0.2:
+            cloud.append(f"#### {lang}")
+        elif percentage / max_percentage > 0.1:
+            cloud.append(f"##### {lang}")
+        else:
+            cloud.append(f"###### {lang}")
     return ' '.join(cloud)
 
 def get_blog_posts(blog_url, max_posts=5):
