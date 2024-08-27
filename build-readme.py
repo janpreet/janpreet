@@ -29,20 +29,15 @@ def get_language_data(username, repos, token=None):
 
 def get_language_composition(language_data):
     total = sum(language_data.values())
-    composition = {lang: count / total * 100 for lang, count in language_data.items()}
-    return dict(sorted(composition.items(), key=lambda x: x[1], reverse=True))
+    composition = {lang: round(count / total * 100, 1) for lang, count in language_data.items()}
+    return dict(sorted(composition.items(), key=lambda x: (-x[1], x[0])))
 
-def create_language_chart(lang_composition, top_n=5):
-    top_languages = dict(list(lang_composition.items())[:top_n])
-    other = sum(dict(list(lang_composition.items())[top_n:]).values())
-    if other > 0:
-        top_languages['Other'] = other
-
-    mermaid_code = "```mermaid\nbar title Language Composition\n"
-    for lang, percentage in top_languages.items():
-        mermaid_code += f'    "{lang}" : {percentage:.1f}\n'
-    mermaid_code += "```"
-    return mermaid_code
+def create_language_table(lang_composition):
+    table = "| Language | Percentage |\n|----------|------------|\n"
+    for lang, percentage in lang_composition.items():
+        if percentage > 0:  # Only include languages with non-zero percentages
+            table += f"| {lang} | {percentage}% |\n"
+    return table
 
 def get_blog_posts(blog_url, max_posts=5):
     feed = feedparser.parse(blog_url)
@@ -67,8 +62,8 @@ def main():
     language_data = get_language_data(username, repos, github_token)
     lang_composition = get_language_composition(language_data)
     
-    print('Creating language chart...')
-    mermaid_chart = create_language_chart(lang_composition)
+    print('Creating language table...')
+    language_table = create_language_table(lang_composition)
     
     print('Fetching blog posts...')
     blog_posts = get_blog_posts(blog_url)
@@ -78,7 +73,7 @@ def main():
     readme_content = generate_readme_content(
         template_path,
         username=username,
-        mermaid_chart=mermaid_chart,
+        language_table=language_table,
         blog_posts='\n'.join([f"- [{post['title']}]({post['link']})" for post in blog_posts]),
         current_time=current_time
     )

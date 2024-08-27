@@ -4,7 +4,7 @@
 I'm passionate about coding and always learning new technologies. Feel free to explore my repositories and don't hesitate to reach out if you have any questions or collaboration ideas!
 
 ## Language Composition
-{mermaid_chart}
+{language_table}
 
 ## Recent Blog Posts
 {blog_posts}
