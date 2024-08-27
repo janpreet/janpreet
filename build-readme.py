@@ -29,12 +29,19 @@ def get_language_data(username, repos, token=None):
 
 def get_language_composition(language_data):
     total = sum(language_data.values())
-    return {lang: count / total * 100 for lang, count in language_data.items()}
+    composition = {lang: count / total * 100 for lang, count in language_data.items()}
+    return dict(sorted(composition.items(), key=lambda x: x[1], reverse=True))
 
-def create_language_chart(lang_composition):
-    mermaid_code = "pie title Language Composition\n"
-    for lang, percentage in sorted(lang_composition.items(), key=lambda x: x[1], reverse=True):
+def create_language_chart(lang_composition, top_n=5):
+    top_languages = dict(list(lang_composition.items())[:top_n])
+    other = sum(dict(list(lang_composition.items())[top_n:]).values())
+    if other > 0:
+        top_languages['Other'] = other
+
+    mermaid_code = "```mermaid\nbar title Language Composition\n"
+    for lang, percentage in top_languages.items():
         mermaid_code += f'    "{lang}" : {percentage:.1f}\n'
+    mermaid_code += "```"
     return mermaid_code
 
 def get_blog_posts(blog_url, max_posts=5):
