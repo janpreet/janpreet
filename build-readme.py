@@ -35,8 +35,7 @@ def get_language_composition(language_data):
 def create_language_table(lang_composition):
     table = "| Language | Percentage |\n|----------|------------|\n"
     for lang, percentage in lang_composition.items():
-        if percentage > 0:  # Only include languages with non-zero percentages
-            table += f"| {lang} | {percentage}% |\n"
+        table += f"| {lang} | {percentage}% |\n"
     return table
 
 def get_blog_posts(blog_url, max_posts=5):

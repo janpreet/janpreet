@@ -3,11 +3,18 @@
 ## About Me
 I'm passionate about coding and always learning new technologies. Feel free to explore my repositories and don't hesitate to reach out if you have any questions or collaboration ideas!
 
-## Language Composition
+<table>
+<tr>
+<td valign="top" width="50%">
+Language Composition
 {language_table}
-
-## Recent Blog Posts
+</td>
+<td valign="top" width="50%">
+Recent Blog Posts
 {blog_posts}
+</td>
+</tr>
+</table>
 
 ## Get in Touch
 - Email: [kado@janpreet.com](mailto:kado@janpreet.com)
