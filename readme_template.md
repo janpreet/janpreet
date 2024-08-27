@@ -3,17 +3,17 @@
 ## About Me
 I'm passionate about coding and always learning new technologies. Feel free to explore my repositories and don't hesitate to reach out if you have any questions or collaboration ideas!
 
-<table>
+<table  markdown="1">
 <tr>
+<th>Language Composition</th>
+<th>Recent Blog Posts</th>
+</tr>
 <td valign="top" width="50%" markdown="1">
-Language Composition
 {language_cloud}
 </td>
 <td valign="top" width="50%" markdown="1">
-Recent Blog Posts
 {blog_posts}
 </td>
-</tr>
 </table>
 
 ## Get in Touch
