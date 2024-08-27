@@ -4,9 +4,6 @@ import feedparser
 import os
 from collections import Counter
 from datetime import datetime, timezone
-import matplotlib.pyplot as plt
-import io
-import base64
 
 def get_github_data(username, token=None):
     headers = {'Authorization': f'token {token}'} if token else {}
@@ -35,17 +32,10 @@ def get_language_composition(language_data):
     return {lang: count / total * 100 for lang, count in language_data.items()}
 
 def create_language_chart(lang_composition):
-    plt.figure(figsize=(10, 5))
-    langs = list(lang_composition.keys())
-    sizes = list(lang_composition.values())
-    plt.pie(sizes, labels=langs, autopct='%1.1f%%', startangle=90)
-    plt.axis('equal')
-    plt.title("Language Composition")
-    
-    buffer = io.BytesIO()
-    plt.savefig(buffer, format='png')
-    buffer.seek(0)
-    return base64.b64encode(buffer.getvalue()).decode()
+    mermaid_code = "pie title Language Composition\n"
+    for lang, percentage in sorted(lang_composition.items(), key=lambda x: x[1], reverse=True):
+        mermaid_code += f'    "{lang}" : {percentage:.1f}\n'
+    return mermaid_code
 
 def get_blog_posts(blog_url, max_posts=5):
     feed = feedparser.parse(blog_url)
@@ -55,10 +45,6 @@ def get_blog_posts(blog_url, max_posts=5):
 def generate_readme_content(template_path, **kwargs):
     with open(template_path, 'r') as f:
         template = f.read()
-    
-    blog_posts_formatted = '\n'.join([f"- [{post['title']}]({post['link']})" for post in kwargs['blog_posts']])
-    kwargs['blog_posts'] = blog_posts_formatted
-
     return template.format(**kwargs)
 
 def main():
@@ -75,7 +61,7 @@ def main():
     lang_composition = get_language_composition(language_data)
     
     print('Creating language chart...')
-    chart_image = create_language_chart(lang_composition)
+    mermaid_chart = create_language_chart(lang_composition)
     
     print('Fetching blog posts...')
     blog_posts = get_blog_posts(blog_url)
@@ -85,8 +71,8 @@ def main():
     readme_content = generate_readme_content(
         template_path,
         username=username,
-        chart_image=chart_image,
-        blog_posts=blog_posts,
+        mermaid_chart=mermaid_chart,
+        blog_posts='\n'.join([f"- [{post['title']}]({post['link']})" for post in blog_posts]),
         current_time=current_time
     )
     

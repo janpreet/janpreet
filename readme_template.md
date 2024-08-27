@@ -4,7 +4,9 @@
 I'm passionate about coding and always learning new technologies. Feel free to explore my repositories and don't hesitate to reach out if you have any questions or collaboration ideas!
 
 ## Language Composition
-<img src="data:image/png;base64,{chart_image}" alt="Language Composition" width="500"/>
+```mermaid
+{mermaid_chart}
+```
 
 ## Recent Blog Posts
 {blog_posts}

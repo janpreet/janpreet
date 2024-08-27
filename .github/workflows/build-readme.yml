@@ -4,8 +4,8 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '0 */6 * * *'  # Runs every 6 hours
-  workflow_dispatch:  # Allows manual triggering
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 jobs:
   update-readme:
@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        fetch-depth: 0  # Fetch all history for all branches and tags
+        fetch-depth: 
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -28,8 +28,7 @@ jobs:
     - name: Update README
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        python build-readme.py
+      run: python build-readme.py
 
     - name: Commit and push if changed
       run: |
