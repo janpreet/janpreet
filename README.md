@@ -17,7 +17,6 @@ I'm passionate about coding and always learning new technologies. Feel free to e
 <li><a href="https://janpreet.com/kado-story">Kado: Weaving Infrastructure Management into Late-Night Code</a></li>
 <li><a href="https://janpreet.com/media-sheet">Media Sheet</a></li>
 <li><a href="https://janpreet.com/nanakshahi-calendar">Nanakshahi Calendar</a></li>
-<li><a href="https://janpreet.com/terraform-gcp-k8s">Terraform-GCP-K8s: A Jenkins DevOps story</a></li>
 </td>
 </table>
 
@@ -25,5 +24,5 @@ I'm passionate about coding and always learning new technologies. Feel free to e
 - Email: [kado@janpreet.com](mailto:kado@janpreet.com)
 - Blog: [https://janpreet.com](https://janpreet.com)
 
-<small><i>Last updated: 2024-08-28 01:18:22 UTC</i></small><br />
+<small><i>Last updated: 2024-08-28 01:19:19 UTC</i></small><br />
 <small><i>NOTE: Language composition is a list of most used languages in my repositories. Larger text indicates more usage in repositories. It is not a direct indication of my skill level.</i></small>
