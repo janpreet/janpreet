@@ -32,7 +32,7 @@ def get_language_composition(language_data):
     composition = {lang: count / total for lang, count in language_data.items()}
     return dict(sorted(composition.items(), key=lambda x: -x[1]))
 
-def create_simple_language_cloud(language_data):
+def create_language_cloud(language_data):
     cloud = ['<div style="text-align: center; line-height: 1.3;">']
     max_count = max(language_data.values())
     for lang, count in sorted(language_data.items(), key=lambda x: -x[1]):
