@@ -34,17 +34,12 @@ def get_language_composition(language_data):
 
 def create_language_cloud(language_data):
     cloud = []
-    min_font_size = 0.8
-    max_font_size = 3
     max_count = max(language_data.values())
-    
     for lang, count in sorted(language_data.items(), key=lambda x: -x[1]):
-        font_size = min_font_size + (max_font_size - min_font_size) * (count / max_count)
-        cloud.append(f'<span style="font-size: {font_size:.2f}em; display: inline-block; margin: 0.2em;">{lang}</span>')
-    
-    joined_cloud = ' '.join(cloud)
+        size = max(1, min(int(count / max_count * 5), 5))
+        cloud.append(f'<span style="font-size: {size}em; display: inline-block;">{lang}</span>')
+    joined_cloud = ', '.join(cloud)
     return f'<div style="text-align: center; line-height: 1.5;">{joined_cloud}</div>'
-
 
 def get_blog_posts(blog_url, max_posts=5):
     feed = feedparser.parse(blog_url)
