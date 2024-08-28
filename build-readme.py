@@ -32,13 +32,12 @@ def get_language_composition(language_data):
     composition = {lang: count / total for lang, count in language_data.items()}
     return dict(sorted(composition.items(), key=lambda x: -x[1]))
 
-def create_language_cloud(language_data):
-    cloud = ['<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">']
+def create_simple_language_cloud(language_data):
+    cloud = ['<div style="text-align: center; line-height: 1.3;">']
     max_count = max(language_data.values())
     for lang, count in sorted(language_data.items(), key=lambda x: -x[1]):
-        size = min(max(int(count / max_count * 40), 12), 40)
-        opacity = 0.5 + (count / max_count * 0.5)
-        cloud.append(f'<span style="font-size: {size}px; opacity: {opacity:.2f};">{lang}</span>')
+        size = max(1, min(int(count / max_count * 5), 5))
+        cloud.append(f'<span style="font-size: {size}em; margin: 0 5px;">{lang}</span>')
     cloud.append('</div>')
     return ' '.join(cloud)
 
