@@ -32,18 +32,14 @@ def get_language_composition(language_data):
     composition = {lang: count / total for lang, count in language_data.items()}
     return dict(sorted(composition.items(), key=lambda x: -x[1]))
 
-def create_language_cloud(lang_composition):
-    cloud = []
-    max_percentage = max(lang_composition.values())
-    for lang, percentage in lang_composition.items():
-        if percentage / max_percentage > 0.5:
-            cloud.append(f"<h3>{lang}</h3>")
-        elif percentage / max_percentage > 0.2:
-            cloud.append(f"<h4>{lang}</h4>")
-        elif percentage / max_percentage > 0.1:
-            cloud.append(f"<h5>{lang}</h5>")
-        else:
-            cloud.append(f"<h6>{lang}</h6>")
+def create_language_cloud(language_data):
+    cloud = ['<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">']
+    max_count = max(language_data.values())
+    for lang, count in sorted(language_data.items(), key=lambda x: -x[1]):
+        size = min(max(int(count / max_count * 40), 12), 40)
+        opacity = 0.5 + (count / max_count * 0.5)
+        cloud.append(f'<span style="font-size: {size}px; opacity: {opacity:.2f};">{lang}</span>')
+    cloud.append('</div>')
     return ' '.join(cloud)
 
 def get_blog_posts(blog_url, max_posts=5):
