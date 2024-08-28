@@ -1,4 +1,4 @@
-name: Update GitHub Profile README
+name: Update GitHub Profile
 
 on:
   push:

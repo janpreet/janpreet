@@ -1,3 +1,4 @@
+[![Update GitHub Profile README](https://github.com/janpreet/janpreet/actions/workflows/build-readme.yml/badge.svg)](https://github.com/janpreet/janpreet/actions/workflows/build-readme.yml)
 # Welcome to my GitHub Profile! 👋
 
 ## About Me
@@ -21,4 +22,4 @@ I'm passionate about coding and always learning new technologies. Feel free to e
 - Blog: [https://janpreet.com](https://janpreet.com)
 
 <small><i>Last updated: {current_time}</i></small><br />
-<small><i>NOTE: Language composition is a list of most used languages in my repositories. Larger text indicates more usage in repositories. It is not a direct indication of my skill level.</i></small>
+<small><i>NOTE: Language composition is a list of languages used in my repositories, ordered by frequency of occurrence (most used to least used). It is not a direct indication of my skill level.</i></small>
