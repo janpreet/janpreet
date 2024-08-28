@@ -33,13 +33,13 @@ def get_language_composition(language_data):
     return dict(sorted(composition.items(), key=lambda x: -x[1]))
 
 def create_language_cloud(language_data):
-    cloud = ['<div style="text-align: center; line-height: 1.3;">']
+    cloud = []
     max_count = max(language_data.values())
     for lang, count in sorted(language_data.items(), key=lambda x: -x[1]):
         size = max(1, min(int(count / max_count * 5), 5))
-        cloud.append(f'<span style="font-size: {size}em; margin: 0 5px;">{lang}</span>')
-    cloud.append('</div>')
-    return ', '.join(cloud)
+        cloud.append(f'<span style="font-size: {size}em; display: inline-block;">{lang}</span>')
+    joined_cloud = ', '.join(cloud)
+    return f'<div style="text-align: center; line-height: 1.5;">{joined_cloud}</div>'
 
 def get_blog_posts(blog_url, max_posts=5):
     feed = feedparser.parse(blog_url)

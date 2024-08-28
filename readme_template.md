@@ -3,6 +3,8 @@
 ## About Me
 I'm passionate about coding and always learning new technologies. Feel free to explore my repositories and don't hesitate to reach out if you have any questions or collaboration ideas!
 
+{language_cloud}
+
 <table  markdown="1">
 <tr>
 <th>Language Composition</th>
