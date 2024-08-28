@@ -39,7 +39,7 @@ def create_language_cloud(language_data):
         size = max(1, min(int(count / max_count * 5), 5))
         cloud.append(f'<span style="font-size: {size}em; margin: 0 5px;">{lang}</span>')
     cloud.append('</div>')
-    return ' '.join(cloud)
+    return ', '.join(cloud)
 
 def get_blog_posts(blog_url, max_posts=5):
     feed = feedparser.parse(blog_url)
