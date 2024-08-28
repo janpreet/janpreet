@@ -41,7 +41,7 @@ def create_language_cloud(language_data):
     joined_cloud = ', '.join(cloud)
     return f'<div style="text-align: center; line-height: 1.5;">{joined_cloud}</div>'
 
-def get_blog_posts(blog_url, max_posts=10):
+def get_blog_posts(blog_url, max_posts=5):
     feed = feedparser.parse(blog_url)
     return [{'title': e.get('title', ''), 'link': e.get('link', '')} 
             for e in feed['entries'][:max_posts]]
