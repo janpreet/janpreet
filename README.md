@@ -9,7 +9,7 @@ I'm passionate about coding and always learning new technologies. Feel free to e
 <th>Recent Blog Posts</th>
 </tr>
 <td valign="top" width="50%" markdown="1">
-<h3>Go</h3> <h6>Starlark</h6> <h6>Shell</h6> <h6>PowerShell</h6> <h6>Makefile</h6> <h6>Dockerfile</h6> <h6>HCL</h6> <h6>Python</h6> <h6>JavaScript</h6> <h6>TypeScript</h6> <h6>HTML</h6> <h6>CSS</h6> <h6>Lua</h6> <h6>SCSS</h6> <h6>Smarty</h6> <h6>Jinja</h6> <h6>Rust</h6> <h6>Open Policy Agent</h6> <h6>TeX</h6> <h6>Mustache</h6> <h6>C</h6> <h6>Ruby</h6> <h6>FLUX</h6> <h6>C++</h6> <h6>Vue</h6> <h6>sed</h6>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;"> <span style="font-size: 40px; opacity: 1.00;">Go</span> <span style="font-size: 12px; opacity: 0.53;">Starlark</span> <span style="font-size: 12px; opacity: 0.51;">Shell</span> <span style="font-size: 12px; opacity: 0.50;">PowerShell</span> <span style="font-size: 12px; opacity: 0.50;">Makefile</span> <span style="font-size: 12px; opacity: 0.50;">Dockerfile</span> <span style="font-size: 12px; opacity: 0.50;">HCL</span> <span style="font-size: 12px; opacity: 0.50;">Python</span> <span style="font-size: 12px; opacity: 0.50;">JavaScript</span> <span style="font-size: 12px; opacity: 0.50;">TypeScript</span> <span style="font-size: 12px; opacity: 0.50;">HTML</span> <span style="font-size: 12px; opacity: 0.50;">CSS</span> <span style="font-size: 12px; opacity: 0.50;">Lua</span> <span style="font-size: 12px; opacity: 0.50;">SCSS</span> <span style="font-size: 12px; opacity: 0.50;">Smarty</span> <span style="font-size: 12px; opacity: 0.50;">Jinja</span> <span style="font-size: 12px; opacity: 0.50;">Rust</span> <span style="font-size: 12px; opacity: 0.50;">Open Policy Agent</span> <span style="font-size: 12px; opacity: 0.50;">TeX</span> <span style="font-size: 12px; opacity: 0.50;">Mustache</span> <span style="font-size: 12px; opacity: 0.50;">C</span> <span style="font-size: 12px; opacity: 0.50;">Ruby</span> <span style="font-size: 12px; opacity: 0.50;">FLUX</span> <span style="font-size: 12px; opacity: 0.50;">C++</span> <span style="font-size: 12px; opacity: 0.50;">Vue</span> <span style="font-size: 12px; opacity: 0.50;">sed</span> </div>
 </td>
 <td valign="top" width="50%" markdown="1">
 <li><a href="https://janpreet.com/home-network">Home Network Journey</a></li>
@@ -24,5 +24,5 @@ I'm passionate about coding and always learning new technologies. Feel free to e
 - Email: [kado@janpreet.com](mailto:kado@janpreet.com)
 - Blog: [https://janpreet.com](https://janpreet.com)
 
-<small><i>Last updated: 2024-08-28 00:40:21 UTC</i></small><br />
+<small><i>Last updated: 2024-08-28 00:48:47 UTC</i></small><br />
 <small><i>NOTE: Language composition is a list of most used languages in my repositories. Larger text indicates more usage in repositories. It is not a direct indication of my skill level.</i></small>
