@@ -1,4 +1,4 @@
-[![Update GitHub Profile README](https://github.com/janpreet/janpreet/actions/workflows/build-readme.yml/badge.svg)](https://github.com/janpreet/janpreet/actions/workflows/build-readme.yml)
+[![Update GitHub Profile](https://github.com/janpreet/janpreet/actions/workflows/build-readme.yml/badge.svg)](https://github.com/janpreet/janpreet/actions/workflows/build-readme.yml)
 # Welcome to my GitHub Profile! 👋
 
 ## About Me
