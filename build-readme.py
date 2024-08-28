@@ -37,19 +37,23 @@ def create_language_cloud(lang_composition):
     max_percentage = max(lang_composition.values())
     for lang, percentage in lang_composition.items():
         if percentage / max_percentage > 0.5:
-            cloud.append(f"### {lang}")
+            cloud.append(f"<h3>{lang}</h3>")
         elif percentage / max_percentage > 0.2:
-            cloud.append(f"#### {lang}")
+            cloud.append(f"<h4>{lang}</h4>")
         elif percentage / max_percentage > 0.1:
-            cloud.append(f"##### {lang}")
+            cloud.append(f"<h5>{lang}</h5>")
         else:
-            cloud.append(f"###### {lang}")
+            cloud.append(f"<h6>{lang}</h6>")
     return ' '.join(cloud)
 
 def get_blog_posts(blog_url, max_posts=5):
     feed = feedparser.parse(blog_url)
     return [{'title': e.get('title', ''), 'link': e.get('link', '')} 
             for e in feed['entries'][:max_posts]]
+
+def format_blog_posts(blog_posts):
+    return '\n'.join([f'<li><a href="{post["link"]}">{post["title"]}</a></li>' for post in blog_posts])
+
 
 def generate_readme_content(template_path, **kwargs):
     with open(template_path, 'r') as f:
@@ -74,6 +78,7 @@ def main():
     
     print('Fetching blog posts...')
     blog_posts = get_blog_posts(blog_url)
+    formatted_blog_posts = format_blog_posts(blog_posts)
     
     print('Generating README content...')
     current_time = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
@@ -81,7 +86,7 @@ def main():
         template_path,
         username=username,
         language_cloud=language_cloud,
-        blog_posts='\n'.join([f"- [{post['title']}]({post['link']})" for post in blog_posts]),
+        blog_posts=formatted_blog_posts,
         current_time=current_time
     )
     
