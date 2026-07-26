@@ -5,18 +5,25 @@ import os
 from collections import Counter
 from datetime import datetime, timezone
 
-def get_github_data(username, token=None):
+def get_paginated(url, token=None):
     headers = {'Authorization': f'token {token}'} if token else {}
-    all_repos = []
+    items = []
     page = 1
     while True:
-        response = requests.get(f"https://api.github.com/users/{username}/repos?per_page=100&page={page}", headers=headers)
-        repos = json.loads(response.text)
-        if not repos:
+        sep = '&' if '?' in url else '?'
+        response = requests.get(f"{url}{sep}per_page=100&page={page}", headers=headers)
+        batch = json.loads(response.text)
+        if not batch:
             break
-        all_repos.extend(repos)
+        items.extend(batch)
         page += 1
-    return all_repos
+    return items
+
+def get_github_data(username, token=None):
+    if token:
+        # /user/repos is the only endpoint that returns private repos, and needs a PAT with repo scope
+        return get_paginated("https://api.github.com/user/repos?visibility=all&affiliation=owner,collaborator,organization_member", token)
+    return get_paginated(f"https://api.github.com/users/{username}/repos", token)
 
 def get_language_data(username, repos, token=None):
     headers = {'Authorization': f'token {token}'} if token else {}
@@ -25,6 +32,20 @@ def get_language_data(username, repos, token=None):
         response = requests.get(repo['languages_url'], headers=headers)
         repo_languages = json.loads(response.text)
         language_data.update(repo_languages)
+    return language_data
+
+# the gists API reports prose/config languages that the repo languages endpoint already filters out
+GIST_SKIP_LANGUAGES = {'Ignore List', 'Markdown', 'Text'}
+
+def get_gist_language_data(username, token=None):
+    # authenticated /gists includes secret gists; the public list is the fallback
+    url = "https://api.github.com/gists" if token else f"https://api.github.com/users/{username}/gists"
+    language_data = Counter()
+    for gist in get_paginated(url, token):
+        for file_info in gist.get('files', {}).values():
+            language = file_info.get('language')
+            if language and language not in GIST_SKIP_LANGUAGES:
+                language_data[language] += file_info.get('size', 0)
     return language_data
 
 def get_language_composition(language_data):
@@ -66,6 +87,7 @@ def main():
     
     print('Analyzing language composition...')
     language_data = get_language_data(username, repos, github_token)
+    language_data.update(get_gist_language_data(username, github_token))
     lang_composition = get_language_composition(language_data)
     
     print('Creating language cloud...')

@@ -27,7 +27,8 @@ jobs:
 
     - name: Update README
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # PAT with repo + gist scope; the default GITHUB_TOKEN cannot see private repos or gists
+        GITHUB_TOKEN: ${{ secrets.README_TOKEN }}
       run: python build-readme.py
 
     - name: Commit and push if changed
