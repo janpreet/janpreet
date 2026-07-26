@@ -1,4 +1,4 @@
-I work on Kubernetes, Terraform, Go, and distributed systems. Side projects lean toward open-source tooling, the Nanakshahi calendar, and home-lab networking. I also love to cook and bake.
+I work on Kubernetes, Terraform, and Go. Side projects lean toward open-source tooling, mobile apps, and home-lab infrastructure. I write about what I learn, and I love to cook and bake.
 
 **[janpreet.com](https://janpreet.com)** · hire@janpreet.com
 
